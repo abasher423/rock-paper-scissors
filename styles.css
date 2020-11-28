@@ -1,0 +1,35 @@
+* {
+  margin: 1em;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.content-title {
+  text-align: center;
+  color: red;
+}
+
+.btn {
+  padding-left: 15rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  list-style-type: none;
+}
+
+button {
+  color: red;
+  padding: 0.5rem;
+}
+
+.round {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 18rem;
+}
+
+.count {
+  margin: 0rem 18rem;
+  display: flex;
+  justify-content: space-between;
+}
