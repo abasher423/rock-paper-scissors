@@ -1,75 +1,30 @@
+const title = document.querySelector('.content-title')
+const rock = document.querySelector('.btn-rock')
+const paper = document.querySelector('.btn-paper')
+const scissors = document.querySelector('.btn-scissors')
+const result = document.querySelector('.info')
+const userWins = document.querySelector('.user-count')
+const computerWins = document.querySelector('.comp-count')
+const userImage = document.querySelector('.user-image')
+const computerImage = document.querySelector('.computer-image')
+const userLabel = document.querySelector('.user')
+const computerLabel = document.querySelector('.comp')
+const restart = document.querySelector('.restart')
+const endGame = document.querySelector('.end-result')
+const moves = document.querySelector('.moves')
 const game = {
     1: 'r',
     2: 'p',
     3: 's'
 }
-let userInput = ''
-let userCount = 0
-let compCount = 0
-
-const rock = document.querySelector('.btn-rock')
-const paper = document.querySelector('.btn-paper')
-const scissors = document.querySelector('.btn-scissors')
-const result = document.querySelector('.info')
-const user = document.querySelector('.user-count')
-const computer = document.querySelector('.comp-count')
-
-rock.addEventListener('click', ()=>{
-    const rand = Math.floor(Math.random() * 3 + 1)
-    const comp = game[rand]
-
-    if (comp == 'r') {
-        result.innerText = 'Draw'
-    }
-    if (comp == 'p') {
-        compCount++
-        result.innerText = 'Computer wins round!'
-        computer.innerText = compCount
-    }
-    if (comp == 's') {
-        userCount++
-        result.innerText = 'user wins round!'
-        user.innerText = userCount
-    }
-})
-
-const round = (value) => {
-    userInput = value
-    const rand = Math.floor(Math.random() * 3 + 1)
-    const comp = game[rand]
-
-    if (userInput == comp) {
-        console.log('draw')
-    }
-    if (userInput == 'r' && comp == 's') {
-        console.log('user wins')
-        userCount++
-    }
-    if (userInput == 'r' && comp == 'p') {
-        console.log('computer wins')
-        compCount++
-    }
-    if (userInput == 's' && comp == 'r') {
-        console.log('computer wins')
-        compCount++
-    }
-    if (userInput == 's' && comp == 'p') {
-        console.log('user wins')
-        userCount++
-    }
-    if (userInput == 'p' && comp == 'r') {
-        console.log('user wins')
-        userCount++
-    }
-    if (userInput == 'p' && comp == 's') {
-        console.log('computer wins')
-        compCount++
-    }
-
-    if (userCount > 2){
-        console.log('Victory')
-    } else if (compCount > 2){
-        console.log('Defeat')
-    }
+const victory = {
+    1: "The force is strong with this one",
+    2: "It doesn't get easier, you just get better",
+    3: "The will to conquer is the first step in Victory"
+}
+const defeat = {
+   1: "You're not even trying",
+   2: "Better luck next time",
+   3: "That was too easy" 
 }
 
