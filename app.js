@@ -120,3 +120,17 @@ function Reset(){
     result.innerText = ''
 }
 
+function PlayAgain(){
+    Reset()
+    userWins.classList.toggle('hidden')
+    computerWins.classList.toggle('hidden')
+    userImage.classList.toggle('hidden')
+    computerImage.classList.toggle('hidden')
+    rock.classList.toggle('hidden')
+    paper.classList.toggle('hidden')
+    scissors.classList.toggle('hidden')
+    computerLabel.classList.toggle('hidden')
+    userLabel.classList.toggle('hidden')
+    result.innerText = ''
+}
+
