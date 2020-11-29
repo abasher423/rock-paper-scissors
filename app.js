@@ -112,3 +112,11 @@ moves.addEventListener('click', ({target}) => {
     }
 })
 
+function Reset(){
+    userCount = 0
+    compCount = 0
+    userWins.innerText = userCount
+    computerWins.innerText = compCount
+    result.innerText = ''
+}
+
