@@ -28,3 +28,9 @@ const defeat = {
    3: "That was too easy" 
 }
 
+let userInput = ''
+let userCount = 0
+let compCount = 0
+
+restart.classList.toggle('hidden')
+
