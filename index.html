@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Game</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -13,10 +15,10 @@
 
     <section>
         <div class="main-content">
-            <ul class="btn">
-                <li class="btn-rock"><button>Rock</button></li>
-                <li class="btn-paper"><button>Paper</button></li>
-                <li class="btn-scissors"><button>Scissors</button></li>
+            <ul class="moves">
+                <li><button class="btn-rock">Rock</button></li>
+                <li><button class="btn-paper">Paper</button></li>
+                <li><button class="btn-scissors">Scissors</button></li></li>
             </ul>
         </div>
     </section>
@@ -24,15 +26,27 @@
     <section>
         <div class="round">
             <h1 class="user">User</h1>
-            <h1 class="info">Start</h1>
+            <h1 class="info"></h1>
             <h1 class="comp">Comp</h1>
         </div>
-    </section>
-
-    <section>
         <div class="count">
             <h1 class="user-count">0</h1>
             <h1 class="comp-count">0</h1>
+        </div>
+
+    </section>
+        <div class="end-game">
+            <h1 class="end-result"></h1>
+            <button class="restart">Restart</button>
+        </div>
+    <section>
+        
+    </section>
+
+    <section>
+        <div class="images">
+            <img class='user-image' src="" alt="">
+            <img class='computer-image' src="" alt="">
         </div>
     </section>
     <script src="app.js"></script>
