@@ -134,3 +134,9 @@ function PlayAgain(){
     result.innerText = ''
 }
 
+restart.addEventListener('click', ()=>{
+    PlayAgain()
+    endGame.innerText = ''
+    title.innerText = 'Rock Paper Scissor'
+    restart.classList.toggle('hidden')
+})
