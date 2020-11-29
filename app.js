@@ -34,64 +34,64 @@ let compCount = 0
 
 restart.classList.toggle('hidden')
 
-moves.addEventListener('click', ({target}) => {
+moves.addEventListener('click', ({event}) => {
     const rand = Math.floor(Math.random() * 3 + 1)
     const comp = game[rand]
 
     switch (compCount < 5 && userCount < 5){
-        case target === rock && comp === 'r':
+        case event === rock && comp === 'r':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'Tie'
             break
-        case target === rock && comp === 'p':
+        case event === rock && comp === 'p':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Computer wins round!'
             compCount++  
             computerWins.innerText = compCount  
             break
-        case target === rock && comp === 's':
+        case event === rock && comp === 's':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'user wins round!'
             userCount++
             userWins.innerText = userCount
             break
-        case target === paper && comp === 'r':
+        case event === paper && comp === 'r':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'computer plays rock, user wins!'
             userCount++
             userWins.innerText = userCount
             break
-        case target === paper && comp === 'p':
+        case event === paper && comp === 'p':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Tie'
             break
-        case target === paper && comp === 's':
+        case event === paper && comp === 's':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'computer plays scissors, computer wins!'
             compCount++
             computerWins.innerText = compCount
             break
-        case target === scissors && comp === 'r':
+        case event === scissors && comp === 'r':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'computer plays rock, computer wins!'
             compCount++
             computerWins.innerText = compCount
             break
-        case target === scissors && comp === 'p':
+        case event === scissors && comp === 'p':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Computer plays paper, user wins!'
             userCount++
             userWins.innerText = userCount
             break
-        case target === scissors && comp === 's':
+        case event === scissors && comp === 's':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'Tie'
