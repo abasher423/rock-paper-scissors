@@ -18,6 +18,8 @@ const scissors = document.querySelector('.btn-scissors')
 const winAudio = document.querySelector('.win-round')
 const loseAudio = document.querySelector('.lose-round')
 const tieAudio = document.querySelector('.tie')
+const winnerAudio = document.querySelector('.winner')
+const loserAudio = document.querySelector('.loser')
 
 // Variables to select images 
 const userImage = document.querySelector('.user-image')
@@ -125,12 +127,14 @@ function CheckWinner(){
         endGame.innerText = victory[Math.floor(Math.random() * 3)]
         PlayAgain()
         restart.classList.toggle('hidden')
+        winnerAudio.play()
     }
     if (compCount === 5){
         title.innerText = 'Defeat'
         endGame.innerText = defeat[Math.floor(Math.random() * 3)]
         PlayAgain()
         restart.classList.toggle('hidden')
+        loserAudio.play()
     }
 }
 
