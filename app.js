@@ -159,9 +159,9 @@ function PlayAgain(){
 }
 
 // Event listener for rock, paper, scissors (using event delegation)
-moves.addEventListener('click', ({event}) => {
+moves.addEventListener('click', ({target}) => {
     const comp = game[Math.floor(Math.random() * 3 + 1)]
-    PlayGame(event, comp)
+    PlayGame(target, comp)
     CheckWinner()
 })
 
