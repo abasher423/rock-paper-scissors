@@ -31,73 +31,80 @@ const defeat = {
 let userInput = ''
 let userCount = 0
 let compCount = 0
+const rand = Math.floor(Math.random() * 3 + 1)
 
 restart.classList.toggle('hidden')
 
 moves.addEventListener('click', ({target}) => {
-    const rand = Math.floor(Math.random() * 3 + 1)
+    rand
     const comp = game[rand]
+    PlayGame(target, comp)
+    CheckWinner()
+})
 
+function PlayGame(playerSelection, computerSelection){
     switch (compCount < 5 && userCount < 5){
-        case target === rock && comp === 'r':
+        case playerSelection === rock && computerSelection === 'r':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'Tie'
             break
-        case target === rock && comp === 'p':
+        case playerSelection === rock && computerSelection === 'p':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Computer wins round!'
             compCount++  
             computerWins.innerText = compCount  
             break
-        case target === rock && comp === 's':
+        case playerSelection === rock && computerSelection === 's':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'user wins round!'
             userCount++
             userWins.innerText = userCount
             break
-        case target === paper && comp === 'r':
+        case playerSelection === paper && computerSelection === 'r':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'computer plays rock, user wins!'
             userCount++
             userWins.innerText = userCount
             break
-        case target === paper && comp === 'p':
+        case playerSelection === paper && computerSelection === 'p':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Tie'
             break
-        case target === paper && comp === 's':
+        case playerSelection === paper && computerSelection === 's':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'computer plays scissors, computer wins!'
             compCount++
             computerWins.innerText = compCount
             break
-        case target === scissors && comp === 'r':
+        case playerSelection === scissors && computerSelection === 'r':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'computer plays rock, computer wins!'
             compCount++
             computerWins.innerText = compCount
             break
-        case target === scissors && comp === 'p':
+        case playerSelection === scissors && computerSelection === 'p':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Computer plays paper, user wins!'
             userCount++
             userWins.innerText = userCount
             break
-        case target === scissors && comp === 's':
+        case playerSelection === scissors && computerSelection === 's':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'Tie'
             break   
     }
+}
 
+function CheckWinner(){
     if (userCount === 5){
         title.innerText = 'Victory'
         endGame.innerText = victory[rand]
@@ -110,7 +117,7 @@ moves.addEventListener('click', ({target}) => {
         PlayAgain()
         restart.classList.toggle('hidden')
     }
-})
+}
 
 function Reset(){
     userCount = 0
