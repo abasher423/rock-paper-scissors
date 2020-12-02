@@ -1,25 +1,36 @@
-const title = document.querySelector('.content-title')
-const rock = document.querySelector('.btn-rock')
-const paper = document.querySelector('.btn-paper')
-const scissors = document.querySelector('.btn-scissors')
-const result = document.querySelector('.info')
-const userWins = document.querySelector('.user-count')
-const computerWins = document.querySelector('.comp-count')
-const userImage = document.querySelector('.user-image')
-const computerImage = document.querySelector('.computer-image')
+// Variables to select labels 
 const userLabel = document.querySelector('.user')
 const computerLabel = document.querySelector('.comp')
 const restart = document.querySelector('.restart')
 const endGame = document.querySelector('.end-result')
+const result = document.querySelector('.info')
+const userWins = document.querySelector('.user-count')
+const computerWins = document.querySelector('.comp-count')
+const title = document.querySelector('.content-title')
+
+// Variables to select rock, paper, scissors buttons
 const moves = document.querySelector('.moves')
+const rock = document.querySelector('.btn-rock')
+const paper = document.querySelector('.btn-paper')
+const scissors = document.querySelector('.btn-scissors')
+
+// Variables to select Audio for sound effects
 const winAudio = document.querySelector('.win-round')
 const loseAudio = document.querySelector('.lose-round')
 const tieAudio = document.querySelector('.tie')
+
+// Variables to select images 
+const userImage = document.querySelector('.user-image')
+const computerImage = document.querySelector('.computer-image')
+
+// Object which contains computer selection choices
 const game = {
     1: 'r',
     2: 'p',
     3: 's'
 }
+
+// Arrays to store victory/defeat outputs
 const victory = [
     "The force is strong with this one",
     "It doesn't get easier, you just get better",
@@ -31,9 +42,10 @@ const defeat = [
    "That was too easy" 
 ]
 
-let userInput = ''
+// Variables to store current round score
 let userCount = 0
 let compCount = 0
+
 
 function PlayGame(playerSelection, computerSelection){
     switch (compCount < 5 && userCount < 5){
@@ -62,7 +74,7 @@ function PlayGame(playerSelection, computerSelection){
         case playerSelection === paper && computerSelection === 'r':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_rock.png'
-            result.innerText = 'computer plays rock, user wins!'
+            result.innerText = 'paper beats rock, user wins!'
             userCount++
             userWins.innerText = userCount
             winAudio.play()
@@ -76,7 +88,7 @@ function PlayGame(playerSelection, computerSelection){
         case playerSelection === paper && computerSelection === 's':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_scissors.png'
-            result.innerText = 'computer plays scissors, computer wins!'
+            result.innerText = 'scissors beats paper, computer wins!'
             compCount++
             computerWins.innerText = compCount
             loseAudio.play()
@@ -84,7 +96,7 @@ function PlayGame(playerSelection, computerSelection){
         case playerSelection === scissors && computerSelection === 'r':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_rock.png'
-            result.innerText = 'computer plays rock, computer wins!'
+            result.innerText = 'rock beats scissors, computer wins!'
             compCount++
             computerWins.innerText = compCount
             loseAudio.play()
@@ -92,7 +104,7 @@ function PlayGame(playerSelection, computerSelection){
         case playerSelection === scissors && computerSelection === 'p':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_hand.png'
-            result.innerText = 'Computer plays paper, user wins!'
+            result.innerText = 'scissors beats paper, user wins!'
             userCount++
             userWins.innerText = userCount
             winAudio.play()
