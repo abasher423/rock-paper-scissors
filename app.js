@@ -118,6 +118,7 @@ function PlayGame(playerSelection, computerSelection){
     }
 }
 
+// Function checks winner (first to 5)
 function CheckWinner(){
     if (userCount === 5){
         title.innerText = 'Victory'
@@ -133,6 +134,7 @@ function CheckWinner(){
     }
 }
 
+// Resets Labels and score 
 function Reset(){
     userCount = 0
     compCount = 0
@@ -141,6 +143,7 @@ function Reset(){
     result.innerText = ''
 }
 
+// Show/hide buttons and labels when game starts/ends
 function PlayAgain(){
     Reset()
     userWins.classList.toggle('hidden')
@@ -155,12 +158,14 @@ function PlayAgain(){
     result.innerText = ''
 }
 
-moves.addEventListener('click', ({target}) => {
+// Event listener for rock, paper, scissors (using event delegation)
+moves.addEventListener('click', ({event}) => {
     const comp = game[Math.floor(Math.random() * 3 + 1)]
-    PlayGame(target, comp)
+    PlayGame(event, comp)
     CheckWinner()
 })
 
+// Event listener for restart button 
 restart.addEventListener('click', ()=>{
     PlayAgain()
     endGame.innerText = ''
@@ -168,4 +173,5 @@ restart.addEventListener('click', ()=>{
     restart.classList.toggle('hidden')
 })
 
+// Hides restart button when game is being played
 restart.classList.toggle('hidden')
