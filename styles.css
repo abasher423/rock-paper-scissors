@@ -73,6 +73,10 @@ footer {
   background-color: white;
   text-align: center;
   color: lightcoral;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .social {
