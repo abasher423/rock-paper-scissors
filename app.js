@@ -46,7 +46,7 @@ function PlayGame(playerSelection, computerSelection){
         case playerSelection === rock && computerSelection === 'p':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_hand.png'
-            result.innerText = 'Computer wins round!'
+            result.innerText = 'Paper beats rock, Computer wins round!'
             compCount++  
             computerWins.innerText = compCount  
             loseAudio.play()
@@ -54,23 +54,24 @@ function PlayGame(playerSelection, computerSelection){
         case playerSelection === rock && computerSelection === 's':
             userImage.src = 'images/user_rock.png'
             computerImage.src = 'images/comp_scissors.png'
-            result.innerText = 'user wins round!'
-            winAudio.play()
+            result.innerText = 'rock beats scissors, user wins round!'
             userCount++
             userWins.innerText = userCount
+            winAudio.play()
             break
         case playerSelection === paper && computerSelection === 'r':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_rock.png'
             result.innerText = 'computer plays rock, user wins!'
-            winAudio.play()
             userCount++
             userWins.innerText = userCount
+            winAudio.play()
             break
         case playerSelection === paper && computerSelection === 'p':
             userImage.src = 'images/user_paper.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Tie'
+            tieAudio.play()
             break
         case playerSelection === paper && computerSelection === 's':
             userImage.src = 'images/user_paper.png'
@@ -78,6 +79,7 @@ function PlayGame(playerSelection, computerSelection){
             result.innerText = 'computer plays scissors, computer wins!'
             compCount++
             computerWins.innerText = compCount
+            loseAudio.play()
             break
         case playerSelection === scissors && computerSelection === 'r':
             userImage.src = 'images/user_scissors.png'
@@ -85,19 +87,21 @@ function PlayGame(playerSelection, computerSelection){
             result.innerText = 'computer plays rock, computer wins!'
             compCount++
             computerWins.innerText = compCount
+            loseAudio.play()
             break
         case playerSelection === scissors && computerSelection === 'p':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_hand.png'
             result.innerText = 'Computer plays paper, user wins!'
-            winAudio.play()
             userCount++
             userWins.innerText = userCount
+            winAudio.play()
             break
         case playerSelection === scissors && computerSelection === 's':
             userImage.src = 'images/user_scissors.png'
             computerImage.src = 'images/comp_scissors.png'
             result.innerText = 'Tie'
+            tieAudio.play()
             break   
     }
 }
