@@ -31,13 +31,11 @@ const defeat = {
 let userInput = ''
 let userCount = 0
 let compCount = 0
-const rand = Math.floor(Math.random() * 3 + 1)
 
 restart.classList.toggle('hidden')
 
 moves.addEventListener('click', ({target}) => {
-    rand
-    const comp = game[rand]
+    const comp = game[Math.floor(Math.random() * 3 + 1)]
     PlayGame(target, comp)
     CheckWinner()
 })
@@ -107,13 +105,13 @@ function PlayGame(playerSelection, computerSelection){
 function CheckWinner(){
     if (userCount === 5){
         title.innerText = 'Victory'
-        endGame.innerText = victory[rand]
+        endGame.innerText = victory[Math.floor(Math.random() * 3 + 1)]
         PlayAgain()
         restart.classList.toggle('hidden')
     }
     if (compCount === 5){
         title.innerText = 'Defeat'
-        endGame.innerText = defeat[rand]
+        endGame.innerText = defeat[Math.floor(Math.random() * 3 + 1)]
         PlayAgain()
         restart.classList.toggle('hidden')
     }
